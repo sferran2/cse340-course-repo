@@ -4,23 +4,23 @@
         <h2>CSE 340 Service Network!</h2>
         <p>Here are a few of our partner organizations:</p>
             
-        <div class="org-card">
-            <img src="/images/brightfuture-logo.png" alt="BrightFuture Builders logo">
-            <h3>BrightFuture Builders</h3>
-            <p>info@brightfuture.org</p>
-        </div>
-            
-        <div class="org-card">
-            <img src="/images/greenharvest-logo.png" alt="GreenHarvest Growers logo">
-            <h3>GreenHarvest Growers</h3>
-            <p>contact@greenharvest.org</p>
-        </div>
-            
-        <div class="org-card">
-            <img src="/images/unityserve-logo.png" alt="UnityServe Volunteers logo">
-            <h3>UnityServe Volunteers</h3>
-            <p>hello@unityserve.org</p>
-        </div>
+        <% organizations.forEach(org=> { %>
+            <div class="org-card">
+                <img src="/images/<%= org.logo_filename %>" alt="<%= org.name %> logo">
+        
+                <h3>
+                    <%= org.name %>
+                </h3>
+        
+                <p>
+                    <%= org.contact_email %>
+                </p>
+        
+                <p>
+                    <%= org.description %>
+                </p>
+            </div>
+            <% }) %>
         
     </main>
 
